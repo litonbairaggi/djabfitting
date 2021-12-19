@@ -2,92 +2,103 @@
 {% block title %}Create Order{% endblock title %}
 {% block body %}
 {% load static %}
-<div class="container">
-    <!-- Content here -->
-        <div class="row gx-2 pt-3">
-        <h3 class="text-center" style="background-color: #87ceebcc; padding: 15px; border-radius: 15px; width: 100%;">Django CRUD Application</h3>
-            <div class="col-md-12 mt-4" style="border:1px solid #80808029; padding:15px;background-color:#ffffffde;">
-                
-                <a class="btn btn-primary mb-3" href="#">Users List (Read)</a>
-                
-                {% comment %} <form action="" method="post">
-                    {% csrf_token %}
-                    {{form.as_p}}
-                    <input type="submit" value="Save">
-                </form> {% endcomment %}
 
-                <form method="post" novalidate>
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="name" class="form-label">{{form.name.label}}</label>
-                        {{form.name}}
+<div id="content" class="span10">
+	<ul class="breadcrumb">
+		<li>
+			<i class="icon-home"></i>
+			<a href="#">Home</a>
+		</li> 
+	</ul>
+	<div class="row-fluid sortable">
+		<div class="box span12">
+			<div class="box-header" data-original-title>
+				<h2>
+					<i class="halflings-icon edit"></i>
+					<span class="break"></span>Add team
+
+				</h2>
+				<div class="box-icon">
+				    <a href="/ems/show_team/" class="btn btn-primary teamlist">Team List</a>
+					<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+					<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+					<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+				</div>
+			</div>
+			<div class="box-content">
+				<form method="POST" class="form-horizontal">
+				{% csrf_token %}
+
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">Name </label>
+                    <div class="controls">
+                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
                     </div>
-
-                    <div class="mb-3">
-                        <label for="email" class="form-label">{{form.email.label}}</label>
-                        {{form.email}}
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">mobile </label>
+                    <div class="controls">
+                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
                     </div>
-
-                    <div class="mb-3">
-                        <label for="mobile" class="form-label">{{form.mobile.label}}</label>
-                        {{form.mobile}}
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">category </label>
+                    <div class="controls">
+                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <label for="department" class="form-label">{{form.department.label}}</label>
-                        {{form.department}}
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">description </label>
+                    <div class="controls">
+                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
                     </div>
-
-                    <div class="mb-3">
-                        <label for="gender" class="form-label">{{form.gender.label}}</label><br/> 
-                        {% for radio in  form.gender %}
-                            <div class="form-check form-check-inline">
-                                {{radio.tag}}
-                                <label class="form-check-label">{{radio.choice_label}}</label>
-                            </div>
-                        {% endfor %}
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">delivery </label>
+                    <div class="controls">
+                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">{{form.address.label}}</label>
-                        {{form.address}}
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">price </label>
+                    <div class="controls">
+                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
                     </div>
-                    
-                    <div class="mb-3">
-                        <label for="languages" class="form-label">{{form.language.label}}</label><br/>
+                </div>
 
-                        {% for checkbox in  form.language %}
-                            <div class="form-check form-check-inline">
-                                {{checkbox.tag}}
-                                <label class="form-check-label">{{checkbox.choice_label}}</label>
-                            </div>
-                        {% endfor %}
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">payment </label>
+                    <div class="controls">
+                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-outline-primary">Save Data</button>
-                        <button type="reset" class="btn btn-outline-warning">Reset Data</button>
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">received_date </label>
+                    <div class="controls">
+                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
                     </div>
-                <form>
+                </div>
 
-                {% if form.errors %}
-                    {% for field in form %}
-                        {% for error in field.errors %}
-                            <div class="alert alert-danger" role="alert">
-                            {{error}}
-                            </div>
-                        {% endfor %}
-                    {% endfor %}
-                {% endif %}
-
-                {% if messages %}
-                    {% for message in  messages %}
-                        <div class="alert alert-{{message.tags}}" role="alert">
-                        {{message}}
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">due </label>
+                    <div class="controls">
+                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
+                    </div>
+                </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="reset" class="btn">Cancel</button>
                         </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
-        </div>
-    </div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--/span-->
+	</div>
+	<!--/row-->
+</div>
 {% endblock body %}
