@@ -1,0 +1,85 @@
+{% extends 'base/base.html' %}
+{% block title %}New Category{% endblock title %}
+{% load crispy_forms_tags %}
+{% block body %}
+{% load static %}
+
+<div class="col-md-12 mt-4" style="border:1px solid #80808029; padding:15px;background-color:#ffffffde;">
+                    
+    <a class="btn btn-primary mb-3" href="{% url 'read' %}">Users List (Read)</a>
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">{{form.name.label}}</label>
+            {{form.name}}
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">{{form.email.label}}</label>
+            {{form.email}}
+        </div>
+
+        <div class="mb-3">
+            <label for="mobile" class="form-label">{{form.mobile.label}}</label>
+            {{form.mobile}}
+        </div>
+
+        <div class="mb-3">
+            <label for="department" class="form-label">{{form.department.label}}</label>
+            {{form.department}}
+        </div>
+
+        <div class="mb-3">
+            <label for="gender" class="form-label">{{form.gender.label}}</label><br/> 
+            {% for radio in  form.gender %}
+                <div class="form-check form-check-inline">
+                    {{radio.tag}}
+                    <label class="form-check-label">{{radio.choice_label}}</label>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{{form.address.label}}</label>
+            {{form.address}}
+        </div>
+        
+        <div class="mb-3">
+            <label for="languages" class="form-label">{{form.language.label}}</label><br/>
+
+            {% for checkbox in  form.language %}
+                <div class="form-check form-check-inline">
+                    {{checkbox.tag}}
+                    <label class="form-check-label">{{checkbox.choice_label}}</label>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-outline-primary">Save Data</button>
+            <button type="reset" class="btn btn-outline-warning">Reset Data</button>
+        </div>
+    <form>
+
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger" role="alert">
+                {{error}}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+
+    {% if messages %}
+        {% for message in  messages %}
+            <div class="alert alert-{{message.tags}}" role="alert">
+            {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+</div>
+
+{% endblock body %}
