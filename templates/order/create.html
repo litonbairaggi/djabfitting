@@ -30,64 +30,64 @@
 				{% csrf_token %}
 
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">Name </label>
+                    <label class="control-label" for="typeahead">{{form.name.label}}</label>
                     <div class="controls">
-                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="typeahead">mobile </label>
-                    <div class="controls">
-                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="typeahead">category </label>
-                    <div class="controls">
-                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
+                      {{form.name}}
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">description </label>
+                    <label class="control-label" for="typeahead">{{form.description.label}}</label>
                     <div class="controls">
-                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="typeahead">delivery </label>
-                    <div class="controls">
-                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
+                      {{form.description}}
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">price </label>
+                    <label class="control-label" for="typeahead">{{form.mobile.label}}</label>
                     <div class="controls">
-                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
+                      {{form.mobile}}
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">payment </label>
+                    <label class="control-label" for="typeahead">{{form.category.label}}</label>
                     <div class="controls">
-                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
+                      {{form.category}}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">{{form.delivery.label}}</label>
+                    <div class="controls">
+                      {{form.delivery}}
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">received_date </label>
+                    <label class="control-label" for="typeahead">{{form.price.label}}</label>
                     <div class="controls">
-                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
+                      {{form.price}}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">{{form.payment.label}}</label>
+                    <div class="controls">
+                      {{form.payment}}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">{{form.due.label}}</label>
+                    <div class="controls">
+                      {{form.due}}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="typeahead">{{form.received_date.label}}</label>
+                    <div class="controls">
+                      {{form.received_date}}
                     </div>
                 </div>
 
-                <div class="control-group">
-                    <label class="control-label" for="typeahead">due </label>
-                    <div class="controls">
-                      <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4">
-                    </div>
-                </div>
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary">Save changes</button>
                             <button type="reset" class="btn">Cancel</button>
