@@ -12,6 +12,7 @@ class OrderForm(forms.ModelForm):
         widgets = {
             'mobile': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':'Mobile Here'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
+            'design': forms.Select(attrs={'class': 'form-check-input'}),
             'delivery': forms.Select(attrs={'class': 'form-check-input'}),
             'price':forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Price'}),
             'payment':forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Payment'}),

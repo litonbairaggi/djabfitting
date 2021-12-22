@@ -30,68 +30,74 @@
 				{% csrf_token %}
 
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">{{form.name.label}}</label>
+                    <label class="control-label" for="name">{{form.name.label}}</label>
                     <div class="controls">
                       {{form.name}}
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">{{form.description.label}}</label>
-                    <div class="controls">
-                      {{form.description}}
-                    </div>
-                </div>
-
-                <div class="control-group">
-                    <label class="control-label" for="typeahead">{{form.mobile.label}}</label>
+                    <label class="control-label" for="mobile">{{form.mobile.label}}</label>
                     <div class="controls">
                       {{form.mobile}}
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">{{form.category.label}}</label>
+                    <label class="control-label" for="category">{{form.category.label}}</label>
                     <div class="controls">
                       {{form.category}}
                     </div>
                 </div>
+
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">{{form.delivery.label}}</label>
+                    <label class="control-label" for="design">{{form.design.label}}</label>
+                    <div class="controls">
+                      {{form.design}}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="description">{{form.description.label}}</label>
+                    <div class="controls">
+                      {{form.description}}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="delivery">{{form.delivery.label}}</label>
                     <div class="controls">
                       {{form.delivery}}
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">{{form.price.label}}</label>
+                    <label class="control-label" for="price">{{form.price.label}}</label>
                     <div class="controls">
                       {{form.price}}
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">{{form.payment.label}}</label>
+                    <label class="control-label" for="payment">{{form.payment.label}}</label>
                     <div class="controls">
                       {{form.payment}}
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">{{form.due.label}}</label>
-                    <div class="controls">
-                      {{form.due}}
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="typeahead">{{form.received_date.label}}</label>
+                    <label class="control-label" for="received_date">{{form.received_date.label}}</label>
                     <div class="controls">
                       {{form.received_date}}
                     </div>
                 </div>
+                <div class="control-group">
+                    <label class="control-label" for="due">{{form.due.label}}</label>
+                    <div class="controls">
+                      {{form.due}}
+                    </div>
+                </div>
 
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Save changes</button>
-                            <button type="reset" class="btn">Cancel</button>
-                        </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="reset" class="btn">Cancel</button>
+                </div>
 
 					</div>
 				</form>
