@@ -10,9 +10,18 @@ def order(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             form.save()
-            # messages.success(request, 'Order created')
-            # return redirect('')
+            messages.success(request, 'Order created')
+            return redirect('')
     context = {
         'form':form
     }
     return render(request, 'order/create.html', context)    
+
+
+# Read
+def read(request):
+    order_data = Order.objects.all()
+    context = {
+        'order_data': order_data
+    }
+    return render(request, 'order/read.html', context)

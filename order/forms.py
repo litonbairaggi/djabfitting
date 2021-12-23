@@ -8,7 +8,7 @@ class OrderForm(forms.ModelForm):
     description = forms.CharField(label="Description", widget=forms.Textarea({'class': 'form-control', 'placeholder':'Description', 'rows':4, 'cols':50}), required=True, error_messages={'required':'Must Enter Descriptions'})
     class Meta:
         model = Order
-        fields = '__all__'
+        fields = ['id', 'name', 'description', 'mobile', 'category', 'design', 'delivery', 'price', 'payment', 'due', 'received_date']
         widgets = {
             'mobile': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':'Mobile Here'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
