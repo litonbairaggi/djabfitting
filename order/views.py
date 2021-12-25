@@ -11,7 +11,7 @@ def order(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Order created')
-            return redirect('')
+            return redirect('read')
     context = {
         'form':form
     }
