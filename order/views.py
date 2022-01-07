@@ -36,7 +36,7 @@ def update(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, 'Order updated')
-            return redirect(request, 'reade')
+            return redirect('reade')
     context = {
         'form': form
     }        
