@@ -18,7 +18,6 @@ def create(request):
     }
     return render(request, 'order/create.html', context)    
 
-
 # Read
 def read(request):
     order_data = Order.objects.all()
@@ -36,8 +35,15 @@ def update(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, 'Order updated')
-            return redirect('reade')
+            return redirect('read')
     context = {
         'form': form
     }        
     return render(request, 'order/create.html', context)
+
+# Delete
+def delete(request, pk):
+    get_order = get_object_or_404(Order, pk=pk)
+    get_order.delete()
+    messages.error(request, 'Order deleted')
+    return redirect('read')

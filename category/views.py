@@ -4,7 +4,7 @@ from .models import Category
 from django.contrib import messages
 # Create your views here.
 
-# Create 
+# Create
 def create(request):
     form = CategoryForm()
     if request.method == 'POST':
@@ -12,7 +12,7 @@ def create(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Category created')
-            return redirect('r')
+            return redirect('read')
     context = {
         'form':form
     }
@@ -35,8 +35,10 @@ def update(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, 'Category updated')
-            return redirect('r')   
-    context = { 'form':form }
+            return redirect('read')   
+    context = {
+        'form':form
+    }
     return render(request, 'category/create.html', context)
 
 # Delete
@@ -44,4 +46,4 @@ def delete(request, pk):
     get_user = get_object_or_404(Category, pk=pk)
     get_user.delete()
     messages.error(request, 'Category deleted')
-    return redirect('r')    
+    return redirect('read')
