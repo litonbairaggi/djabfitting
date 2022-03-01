@@ -26,7 +26,7 @@ def read(request):
     }
     return render(request, 'category/read.html', context)
 
-# Update
+# Update 
 def update(request, pk):
     get_user_data = get_object_or_404(Category, pk=pk)
     form = CategoryForm(instance=get_user_data)
