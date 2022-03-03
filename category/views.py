@@ -12,14 +12,14 @@ def create(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Category created')
-            return redirect('read')
+            return redirect('category_read')
     context = {
         'form':form
     }
     return render(request, 'category/create.html', context)
 
 # Read
-def read(request):
+def category_read(request):
     category_data = Category.objects.all()
     context = {
         'category_data': category_data
@@ -27,7 +27,7 @@ def read(request):
     return render(request, 'category/read.html', context)
 
 # Update 
-def update(request, pk):
+def category_update(request, pk):
     get_user_data = get_object_or_404(Category, pk=pk)
     form = CategoryForm(instance=get_user_data)
     if request.method == "POST":
@@ -35,15 +35,15 @@ def update(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, 'Category updated')
-            return redirect('read')   
+            return redirect('category_read') 
     context = {
         'form':form
     }
     return render(request, 'category/create.html', context)
 
 # Delete
-def delete(request, pk):
+def category_delete(request, pk):
     get_user = get_object_or_404(Category, pk=pk)
     get_user.delete()
     messages.error(request, 'Category deleted')
-    return redirect('read')
+    return redirect('category_read')

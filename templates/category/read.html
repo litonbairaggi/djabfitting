@@ -39,10 +39,10 @@
                            <td>{{ data.category_name }}</td>                    
 
                         <td class="center">
-                           <a class="btn btn-info" href="{% url 'update' data.id %}">
+                           <a class="btn btn-info" href="{% url 'category_update' data.id %}">
                            <i class="halflings-icon white edit"></i>  
                            </a>
-                           <a class="btn btn-danger" href="{% url 'delete' data.id %}" onclick="return confirm('Are you sure?');">
+                           <a class="btn btn-danger" href="{% url 'category_delete' data.id %}" onclick="return confirm('Are you sure?');">
                            <i class="halflings-icon white trash"></i> 
                            </a>
                         </td>
