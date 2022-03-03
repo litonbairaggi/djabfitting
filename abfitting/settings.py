@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # apps
     'category',
     'order',
+    'employee',
     # 'crispy_forms',
 ]
 
