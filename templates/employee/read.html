@@ -42,7 +42,7 @@
                             <a class="btn btn-info" href="{% url 'employee_update' data.id %}">
                             <i class="halflings-icon white edit"></i>  
                             </a>
-                            <a class="btn btn-danger" href="#" onclick="return confirm('Are you sure?');">
+                            <a class="btn btn-danger" href="{% url 'employee_delete' data.id %}" onclick="return confirm('Are you sure?');">
                             <i class="halflings-icon white trash"></i> 
                             </a>
                          </td>

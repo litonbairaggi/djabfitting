@@ -1,3 +1,4 @@
+from webbrowser import get
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import context
 from . forms import EmployeeForm
@@ -41,3 +42,10 @@ def employee_update(request, pk):
         'form': form
     }
     return render(request, 'employee/create.html', context)
+
+# Delete 
+def employee_delete(request, pk):
+    get_employee = get_object_or_404(Employee, pk=pk)
+    get_employee.delete()
+    messages.error(request, 'Employee deleted')
+    return redirect('employee_read')
