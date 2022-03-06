@@ -4,8 +4,8 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    # path('create/', views.create, name="create"),
-    # path('', views.category_read, name='category_read'),
+    path('create/', views.create, name="create"),
+    path('', views.employee_read, name='employee_read'),
     # path('<int:pk>/', views.category_update, name='category_update'),
     # path('delete/<int:pk>/', views.category_delete, name='category_delete'),   
 ]
