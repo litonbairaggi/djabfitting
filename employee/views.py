@@ -26,3 +26,18 @@ def employee_read(request):
         'employee_data': employee_data
     }
     return render(request, 'employee/read.html', context)
+
+# Update
+def employee_update(request, pk):
+    get_employee_data = get_object_or_404(Employee, pk=pk)
+    form = EmployeeForm(instance=get_employee_data)
+    if request.method == "POST":
+        form = EmployeeForm(request.POST, instance=get_employee_data)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Employee updated')
+            return redirect('employee_read')
+    context = {
+        'form': form
+    }
+    return render(request, 'employee/create.html', context)
