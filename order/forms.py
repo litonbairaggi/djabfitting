@@ -8,7 +8,7 @@ class OrderForm(forms.ModelForm):
     description = forms.CharField(label="Description", widget=forms.Textarea({'class': 'form-control', 'placeholder':'Description', 'rows':4, 'cols':50}), required=True, error_messages={'required':'Must Enter Descriptions'})
     class Meta:
         model = Order
-        fields = ['id', 'name', 'description', 'mobile', 'category', 'design', 'delivery', 'price', 'payment', 'due', 'received_date']
+        fields = ['id', 'name', 'description', 'mobile', 'category', 'design', 'delivery', 'price', 'payment', 'due', 'received_date', 'employee']
         widgets = {
             'mobile': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':'Mobile Here'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
@@ -18,4 +18,5 @@ class OrderForm(forms.ModelForm):
             'payment':forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Payment'}),
             'due':forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Due'}),
             'received_date': forms.DateTimeInput(attrs={'class': 'form-control datetimepicker-input'}),
+            'employee': forms.Select(attrs={'class': 'form-control'}),
         }
